@@ -1,0 +1,4 @@
+flask_server/venv
+client/node_modules
+flask_server\venv
+client\node_modules
