@@ -29,4 +29,4 @@ CORS(app)
 
 #if __name__ == "__main__":
 #    app.run(debug=True)
-import routes, database
+import routes.routes, database
