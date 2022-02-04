@@ -15,7 +15,9 @@ app = Flask(__name__)
 
 #add Database
 #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER,pw=POSTGRES_PW,url=POSTGRES_URL,db=POSTGRES_DB)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:catdog123@localhost:5432/flask_db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:catdog123@localhost:5432/flask_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://battle:catdog123@localhost:5432/postgres'
+
 db = SQLAlchemy(app)
 
 CORS(app)
