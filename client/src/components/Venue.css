@@ -1,0 +1,48 @@
+section {
+  margin: auto;
+  text-align: left;
+  width: 100%;
+
+
+}
+
+.Venue {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  border: 3px solid rgb(0, 110, 255);
+  border-radius: 25px;
+  padding-bottom: 10px;
+
+  padding: 10px;
+  outline-offset: 5px;
+}
+
+.sub_venue {
+  margin: auto;
+  height: 90%;
+  width: 85%;
+  border: 3px solid rgb(0, 110, 255);
+  border-radius: 25px;
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+
+
+}
+
+
+ul {
+  content: center;
+}
+
+li {
+  text-align: left;
+  justify-content: left;
+
+  display: flex;
+  }
+
+.Thebutton {
+  padding-left: 7px;
+}

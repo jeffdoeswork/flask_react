@@ -6,6 +6,7 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask_cors import CORS 
 from config import Config
+from flask_migrate import Migrate
 
 #https://www.youtube.com/watch?v=RcQwcyyCOmM
 #https://youtu.be/EAcD5ueqvHQ?t=517
@@ -17,10 +18,16 @@ app.config.from_object(Config)
 
 #add Database
 #DB_URL = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'.format(user=POSTGRES_USER,pw=POSTGRES_PW,url=POSTGRES_URL,db=POSTGRES_DB)
+### Laptop
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:catdog123@localhost:5432/flask_db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://battle:catdog123@localhost:5432/postgres'
+### Desktop
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://battle:catdog123@localhost:5432/postgres'
+### Office
+app.config['SQLALCHEMY_DATABASE_URI'] ="postgresql+psycopg2://postgres:gelaw01@localhost/postgres"
+
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db) # this
 
 CORS(app)
 #create db model
@@ -29,4 +36,4 @@ CORS(app)
 
 #if __name__ == "__main__":
 #    app.run(debug=True)
-import routes.routes, database
+import routes.routes, routes.routes_venue, database

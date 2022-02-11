@@ -1,32 +1,7 @@
-section {
-  margin: auto;
-  text-align: left;
-  width: 50%;
 
 
-}
-
-.App {
-  margin: auto;
+.Party {
   text-align: center;
-  width: 50%;
-  border: 3px solid rgb(5, 126, 15);
-  border-radius: 25px;
-  padding: 10px;
-  outline-offset: 5px;
+
 }
 
-ul {
-  content: center;
-}
-
-li {
-  text-align: left;
-  justify-content: left;
-
-  display: flex;
-  }
-
-.Thebutton {
-  padding-left: 7px;
-}

@@ -20,6 +20,7 @@ from datetime import datetime
 from server import db
 
 class Event(db.Model):
+    __tablename__ = 'Event'
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.String(200), nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
@@ -30,6 +31,36 @@ class Event(db.Model):
 
     def __init__(self, description):
         self.description = description
+
+class Venue(db.Model):
+    __tablename__ = 'Venue'
+    id = db.Column(db.Integer, primary_key=True)
+    description = db.Column(db.String(200), nullable=False)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+
+    #create a string
+    def __repr__(self):
+        return f"Venue: {self.description}"
+
+    def __init__(self, description):
+        self.description = description
+
+class Party(db.Model):
+    __tablename__ = 'Party'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(64), index=True, unique=True)
+    created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    
+    venue_id = db.Column(db.Integer, db.ForeignKey('Venue.id'))
+    venue = db.relationship("Venue")
+
+    event_id = db.Column(db.Integer, db.ForeignKey('Event.id'))
+    event = db.relationship("Event")
+
+    def __repr__(self):
+        return f"<Party {self.title}"
+
+
 
 def format_event(event):
     return {
