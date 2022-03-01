@@ -1,0 +1,62 @@
+.Styler {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls-wrapper {
+  width: 100%;
+}
+
+.carousel-wrapper {
+  width: 100%;
+}
+
+.rec-carousel-item:focus {
+  outline: none;
+  box-shadow: #29db05;
+}
+
+.itembox {
+  background-color: green;
+  font-size: 7em;
+}
+
+button.rec-dot:hover {
+  box-shadow: 0 0 1px 3px  #198c02;
+  background:  #29db05;;
+  color: #fff;
+}
+
+.rec-dot:hover,
+.rec.rec-dot:focus{
+  cursor: pointer !important;
+  box-shadow: none !important;
+  background-color:  #29db05 !important;
+}
+
+.rec.rec-dot {
+  background: #fff;
+  border: 2px #333 solid;
+  border-radius: 1;
+}
+.rec.rec-dot_active {
+  background: #29db05;
+  box-shadow:  0 0 1px 3px  #198c02;
+}
+
+.rec.rec-arrow:hover, 
+.rec.rec-arrow:focus {
+  cursor: pointer !important;
+  box-shadow: none !important;
+  background-color: #29db05 !important;
+}
+
+.rec.rec-arrow:disabled {
+  visibility: hidden;
+}
+
+.exit_button {
+
+  justify-content: right;
+}

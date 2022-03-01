@@ -6,6 +6,8 @@ import Testimonials from './slider/3slider.js'
 import "./slider/venue_slider.css";
 import Item from "./slider/Item";
 import Carousel from "react-elastic-carousel";
+import ListGroup from 'react-bootstrap/ListGroup';
+
 // https://codesandbox.io/s/react-elastic-carousel-z0rjw?file=/src/index.js:420-435}
 
 const baseURL = "http://localhost:5000"
@@ -85,6 +87,32 @@ function Venue() {
     { width: 350, itemsToShow: 1 },
   
   ];
+
+  function Pagination({ pages, activePage, onClick }) {
+    console.log("activePage", activePage);
+    return (
+      <div style={{display: 'flex'}}>
+
+
+        {pages.map(page => {
+          const isActivePage = activePage === page
+          return (
+            <div 
+              className="spacer"
+              key={page}
+              onClick={() => onClick(page)}
+              active={isActivePage}>
+
+              <a className="horz_li">{page + 1}</a>
+
+            </div>
+          )
+        })}
+      </div>
+      
+    );
+  }
+
   return (
     <div className="Venue">
       <section>
@@ -101,12 +129,17 @@ function Venue() {
           <button type="submit">Submit</button>
         </form>
       </section>
-      <br></br>        
+      <br></br>     
+
+
       <div className="Styler">
       <div className="controls-wrapper">
       </div>
-      <div className="carousel-wrapper">
-        <Carousel breakPoints={breakPoints} >
+      <div className="carousel-wrapper horz_row">
+        <Carousel 
+        breakPoints={breakPoints} 
+        renderPagination={Pagination}
+        >
           {venuesList.map((venue) => {
             if (venueId === venue.id) {
               return (
