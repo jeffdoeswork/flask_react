@@ -44,3 +44,17 @@ li {
 .Thebutton {
   padding-left: 7px;
 }
+
+.horz_event:hover {
+  background-color: rgb(54, 209, 15);
+  cursor: pointer;
+}
+
+.horz_event {
+  width: 20px;
+  height: 20px;
+  background: rgb(146, 243, 127); 
+  -moz-border-radius: 20px; 
+  -webkit-border-radius: 20px; 
+  border-radius: 20px;
+}

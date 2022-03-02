@@ -49,7 +49,7 @@ button.rec-dot:hover {
 .rec.rec-arrow:focus {
   cursor: pointer !important;
   box-shadow: none !important;
-  background-color: #29db05 !important;
+  background-color: #949494 !important;
 }
 
 .rec.rec-arrow:disabled {

@@ -86,6 +86,30 @@ function Event() {
   
   ];
 
+  function Pagination({ pages, activePage, onClick }) {
+    console.log("activePage", activePage);
+    return (
+      <div style={{display: 'flex'}}>
+
+        {pages.map(page => {
+          const isActivePage = activePage === page
+          return (
+            <div 
+              className="spacer"
+              key={page}
+              onClick={() => onClick(page)}
+              active={isActivePage}>
+
+              <a className="horz_event">{page + 1}</a>
+
+            </div>
+          )
+        })}
+      </div>
+      
+    );
+  }
+
   return (
     <div className="Event">
       <section>
@@ -108,7 +132,10 @@ function Event() {
       <div className="controls-wrapper">
       </div>
       <div className="carousel-wrapper">
-        <Carousel breakPoints={breakPoints} >
+        <Carousel 
+        breakPoints={breakPoints}
+        renderPagination={Pagination}
+         >
           {eventsList.map((event) => {
             if (eventId === event.id) {
               return (
